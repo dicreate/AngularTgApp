@@ -29,7 +29,7 @@ export class ShopComponent {
 
   constructor(public products: ProductsService, public telegram: TelegramService ) {
     this.telegram.MainButton.show();
-    console.log(this.products.byGroup)
+    this.telegram.BackButton.hide();
   }
 
 }

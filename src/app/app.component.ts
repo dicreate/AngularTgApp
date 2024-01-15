@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { TelegramService } from './services/telegram.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,7 @@ import { RouterOutlet } from '@angular/router';
   template:`<router-outlet>`
 })
 export class AppComponent {
-  title = 'angular-tg-app';
+  constructor(private telegram: TelegramService) {
+    this.telegram.ready();
+  }
 }
