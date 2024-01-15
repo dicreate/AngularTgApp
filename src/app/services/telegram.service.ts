@@ -31,7 +31,7 @@ export class TelegramService {
    }
 
    sendData(data: object) {
-    this.tg.sendData(JSON.stringify(data))
+    this.tg.sendData(JSON.stringify(data));
    }
 
    ready() {
