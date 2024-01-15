@@ -7,6 +7,8 @@ interface TgButton {
   setText(text:string): void;
   onClick(fn: Function): void;
   offClick(fn: Function): void;
+  enable() : void;
+  disable() : void
 }
 
 @Injectable({
@@ -26,6 +28,10 @@ export class TelegramService {
 
    get BackButton() : TgButton {
     return this.tg.BackButton;
+   }
+
+   sendData(data: object) {
+    this.tg.sendData(JSON.stringify(data))
    }
 
    ready() {
