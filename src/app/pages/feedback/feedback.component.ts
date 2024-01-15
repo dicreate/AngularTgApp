@@ -18,7 +18,7 @@ import { TelegramService } from '../../services/telegram.service';
 })
 
 export class FeedbackComponent implements OnInit, OnDestroy {
-  feedback = signal('empty');
+    feedback = signal('');
 
   constructor(private telegram:TelegramService) {
     this.sendData = this.sendData.bind(this);
@@ -26,6 +26,8 @@ export class FeedbackComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
    this.telegram.MainButton.setText('Отправить сообщение')
+  /*  this.telegram.MainButton.show();
+   this.telegram.MainButton.disable(); */
    this.telegram.MainButton.hide();
    this.telegram.MainButton.onClick(this.sendData);
   }
