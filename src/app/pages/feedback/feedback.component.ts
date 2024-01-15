@@ -32,7 +32,7 @@ export class FeedbackComponent implements OnInit, OnDestroy {
    this.telegram.MainButton.onClick(this.sendData);
   }
   sendData() {
-    this.telegram.sendData({ feedback: this.feedback });
+    this.telegram.sendData({ feedback: this.feedback() });
   }
 
   handleChange(event) {
